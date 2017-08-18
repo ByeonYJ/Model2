@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ include file = "board_head.jsp" %>
+<jsp:include page="../common/common_head.jsp"/>
 	<header>
-	<h1 class="gms-h1">B O A R D</h1><br />
+	<h1 class="gms-h1">Board</h1><br />
 	</header>
 	<hr /><br />
 
@@ -60,4 +60,4 @@
 			
 		</tr>
 	</table>
-<%@ include file = "../common/footer.jsp" %>
+<jsp:include page="../common/footer.jsp"/>

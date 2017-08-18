@@ -1,20 +1,21 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<jsp:include page="common_head.jsp"/>
 <!doctype html>
 <html lang="ko">
 <head>
 	<meta charset="UTF-8">
 <title>학생관리</title>
-<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/member.css" />
+<link rel="stylesheet" href="${ctx}/resources/css/member.css" />
 </head>
 <body>
 <div id="wrapper">
-	<a href="<%=request.getContextPath()%>/index.jsp" class="gms-gomain">메인으로 가기</a><br />
+	<a href="${ctx}/index.jsp" class="gms-gomain">메인으로 가기</a><br />
 <header>
 <h1 class="gms-h1">NO PW</h1>
 </header>
 <hr /><br />
-	<div class="gms-image"><a href="<%=request.getContextPath()%>/index.jsp"><img src="<%=request.getContextPath()%>/resources/img/login.JPG" alt="" /></a></div><br />
-		<form id="login_form" action="<%=request.getContextPath()%>/common.do" method="get">
+	<div class="gms-image"><a href="${ctx}/index.jsp"><img src="${ctx}/resources/img/login.JPG" alt="" /></a></div><br />
+		<form id="login_form" action="${ctx}/common.do" method="get">
 		<fieldset class="form-edit">
 		<legend>로그인</legend>
 			<span class="login-span">ID</span>
@@ -33,8 +34,8 @@
   <p>Posted by: ByeonYJ</p>
   <p>Contact information: <a href="mailto:someone@example.com">
   order1986@gmail.com</a>.</p>
-  <a href="<%=request.getContextPath() %>/util/jdbc_test.jsp" />DB 테스트</a>
-  <a href="<%=request.getContextPath() %>/util/update_email.jsp">E-mail 테스트</a>
+  <a href="${ctx}/util/jdbc_test.jsp" />DB 테스트</a>
+  <a href="${ctx}/util/update_email.jsp">E-mail 테스트</a>
   </div>
 </footer>
 </body>

@@ -13,14 +13,14 @@
 	public static final String USERNAME="hanbit";
 	public static final String PASSWORD="hanbit";
 	public static final String TABLE_MEMBER="Member";
-	public static final String MEM_ID="id";
-	public static final String MEM_PWD="password";
-	public static final String MEM_SSN="ssn";
-	public static final String MEM_NAME="name";
-	public static final String MEM_REGDATE="regdate";
+	public static final String MEMBER_ID="member_id";
+	public static final String MEMBER_PASS="password";
+	public static final String MEMBER_SSN="ssn";
+	public static final String MEMBER_USER="name";
+	public static final String MEMBER_REGDATE="regdate";
 	
 	public static final String TABLE_BOARD="Board";
-	public static final String BOARD_ID="id";
+	public static final String BOARD_ID="member_id";
 	public static final String BOARD_SEQ="article_seq";
 	public static final String BOARD_HIT="hitcount";
 	public static final String BOARD_TITLE="title";

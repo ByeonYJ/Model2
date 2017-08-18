@@ -15,12 +15,16 @@ insert into Member(id,pwd,name,ssn,regdate) values('shin','1234','신세경','89
 insert into Member(id,pwd,name,ssn,regdate) values('hhh','1234','tjtjtj','890101-2345678',sysdate);
 insert into member(phone) values('');
 
+SELECT * FROM Member;
+SELECT * FROM Major;
+
 UPDATE member SET name='bbb', phone='bbb' WHERE id='aaaa';
 
 SELECT * FROM MEMBER;
 UPDATE MEMBER SET pwd='22222' WHERE id='you';
 DELETE FROM MEMBER WHERE id='qqqq';
 UPDATE member SET phone='010-1234-7777';
+DROP TABLE student;
 
 SELECT * FROM board;
 SELECT COUNT(*)AS count FROM board;

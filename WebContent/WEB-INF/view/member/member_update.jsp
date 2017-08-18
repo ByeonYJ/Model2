@@ -1,15 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ include file = "member_head.jsp" %>
-<%@ page import="java.sql.*" %>
+<jsp:include page="member_head.jsp"/>
 	<header>
 	<h1 class="gms-h1">Member Detail</h1>
 	</header>
 	<hr /><br />
 	<h1 class="gms-text-center">회원 상세정보</h1>
-	<form id="mem_update" action="<%=request.getContextPath()%>/member/service_update.jsp" method="get">
+	<form id="mem_update" action="${ctx}/member/service_update.jsp" method="get">
 	<table id = "detail-tab">
 		<tr>
-			<td colspan="2" rowspan="3" align="left" width="20%"><img src="<%=request.getContextPath()%>/resources/img/profile.JPG"></td>
+			<td colspan="2" rowspan="3" align="left" width="20%"><img src="${ctx}/resources/img/profile.JPG"></td>
 			<th> 이름 </th>
 			<td></td>
 		</tr>
@@ -42,9 +41,7 @@
 	</form>
 	<script>
 		function cancle() {
-			location.href="<%=request.getContextPath()%>/member/member_detail.jsp?id=null";
+			location.href="${ctx}/member/member_detail.jsp?id=null";
 		}
 	</script>
-	<%@ include file = "../common/footer.jsp" %>
-
-
+	<jsp:include page="../common/footer.jsp"/>

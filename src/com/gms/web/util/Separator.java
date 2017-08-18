@@ -6,8 +6,8 @@ public class Separator {
 	public static Command cmd=new Command();//cmd 이름으로 bean처럼 빈 공간을 만듬
 	public static void init(HttpServletRequest request){
 		String action=request.getParameter("action");//index페이지에서 온 액션에 로그인페이지
-		String page=request.getParameter("page");//index페이지에서 온 페이지에 메인페이지
-		String servletPath=request.getServletPath();//외부값을 가져올때는 request를 사용 경로를 servletPath로 넣어줬다 /common.do 가 온것
+		String page=request.getParameter("page");//index페이지에서 온 페이지
+		String servletPath=request.getServletPath();//외부값을 가져올때는 request를 사용, 경로를 servletPath로 넣어줬다 /common.do 가 온것
 		System.out.println("--servletPath--"+servletPath);
 		String directory=servletPath.substring(1,servletPath.indexOf("."));// /common.do 의 /는0, .do의 .까지가 indexOf(".") 
 		System.out.println("--directory--"+directory);

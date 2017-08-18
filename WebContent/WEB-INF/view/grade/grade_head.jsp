@@ -4,8 +4,12 @@
 <head>
 <meta charset="UTF-8">
 <title>성적관리</title>
-<link rel="stylesheet" href="<%=request.getContextPath()%>/css/grade.css" />
+<link rel="stylesheet" href="${ctx}/css/grade.css"/>
 </head>
 <body>
 <div id="wrapper">
-	<a href="<%=request.getContextPath()%>/index.jsp" class="gms-gomain">메인으로 가기</a><br />
+<header>
+	<jsp:include page="../common/common_head.jsp"/>
+</header>
+	<a href="${ctx}/index.jsp" class="gms-gomain">메인으로 가기</a><br />
+	

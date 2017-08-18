@@ -37,7 +37,7 @@ CREATE TABLE Board(
 	FOREIGN KEY(id) REFERENCES MEMBER(id) ON DELETE CASCADE
 );
 
-SELECT * FROM major;
+SELECT * FROM student;
 drop table grade;
 
 CREATE TABLE major(
@@ -69,6 +69,50 @@ CREATE TABLE grade(
 );
 SELECT * FROM grade;
 
+CREATE VIEW student (num,id,name,ssn,regdate,phone,email,title)
+AS
+SELECT rownum, t.*
+FROM (SELECT a.member_id, a.name,rpad(substr(a.ssn,1,7),14,'*') ssn,to_char(a.regdate,'yyyy-MM-dd') regdate,
+        a.phone,a.email,listagg(s.title,',') within GROUP(ORDER BY s.title) 과목
+    FROM member a
+        LEFT JOIN major m ON a.member_id LIKE m.member_id
+        left join subject s on m.subj_id LIKE s.subj_id
+        GROUP BY a.member_id, a.name, a.ssn,a.regdate,a.phone,a.email
+        ORDER BY regdate
+) t
+  	ORDER BY rownum DESC
+;
+
+drop view student;
+
+create view student(num,id,name,ssn,regdate,phone,email,title)
+as
+select rownum, t.*
+from (
+    select a.member_id, a.name, a.ssn, a.phone, a.email, LISTAGG(m.SUBJ_ID, ',') within group (order by m.SUBJ_ID) title, to_char(a.regdate,'yyyy-MM-dd') regdate 
+    from member a
+        left outer join major m on a.member_id = m.member_id
+     --   left join subject s on m.subj_id = s.subj_id
+    group by a.member_id, a.name, a.ssn, a.phone, a.email,a.regdate  
+    order by regdate 
+) t
+order by rownum desc;
+  
+select * from student;
+
+SELECT * FROM student--Paging : 한 페이지에 5명까지만 출력
+WHERE rownum <= 5;
+--SELECT *
+--FROM (SELECT * FROM student
+--WHERE num >(SELECT count(*) FROM student)-5);
+
+SELECT t.*
+FROM (SELECT rownum rnum, s.*
+	FROM student s)t
+	WHERE t.rnum BETWEEN 1 AND 5;
+
+DROP VIEW Student;
+SELECT * FROM student; 
 --기존 테이블에 없는 칼럼을 추가해서 fk로 만드는 로직
 ALTER TABLE member ADD profile VARCHAR2(30);
 

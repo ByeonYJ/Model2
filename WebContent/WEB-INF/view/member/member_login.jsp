@@ -1,10 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ include file = "member_head.jsp" %>
+<jsp:include page="member_head.jsp"/>
 <header>
 <h1 class="gms-h1">Member Login</h1>
 </header>
 <hr /><br />
-	<div id="image" class="gms-image"><a href="<%=request.getContextPath()%>/index.jsp"><img src="<%=request.getContextPath()%>/resources/img/login.jpg" alt="" /></a></div><br />
+	<div id="image" class="gms-image"><a href="${ctx}/index.jsp"><img src="${ctx}/resources/img/login.jpg" alt="" /></a></div><br />
 		<form id="login_form" action="" class="form-edit">
 		<fieldset>
 		<legend>로그인</legend>
@@ -16,4 +16,4 @@
 			<input type="submit" value="Cancle" class="submit-blue">
 		</fieldset>
 		</form>
-<%@ include file = "../common/footer.jsp" %>
+<jsp:include page="../common/footer.jsp"/>
